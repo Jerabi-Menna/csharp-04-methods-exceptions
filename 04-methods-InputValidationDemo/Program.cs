@@ -26,11 +26,17 @@ namespace _04_methods_InputValidationDemo
         static int GetNum()
         {
             Console.WriteLine("Enter a number between 0 and 1000:");
+            try
+            {
             int num = int.Parse(Console.ReadLine());
-
             if (num <= 0 || num >= 1000) GetNum();
-
             return num;
+            }
+            catch
+            {
+            Console.WriteLine("Invalid Information entered");
+            GetNum();
+            }
         }
     }
 }

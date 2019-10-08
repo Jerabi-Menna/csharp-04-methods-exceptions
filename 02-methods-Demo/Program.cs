@@ -18,17 +18,10 @@ namespace _02_methods_Demo
             return n1 + n2;
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
-            int x;
             String s;
-            printIt("fun");
-            x = add(2,3);
-            s = x.ToString();
-            printIt(s);
+            printIt(add(3,3).ToString());
         }
-
-
-        
     }
 }
