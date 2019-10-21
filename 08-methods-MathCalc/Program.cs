@@ -41,17 +41,18 @@ namespace _08_methods_MathCalc
             return a / b;
         }
 
-        static char GetChoice()
+        static string GetChoice()
         {
             Console.Write("Please enter a choice: ");
-            char c = Char.ToLower(Char.Parse(Console.ReadLine()));
+            string initial = Console.ReadLine();
+            string c = initial.ToLower();
             switch (c)
             {
-                case 'a':
-                case 's':
-                case 'm':
-                case 'd':
-                case 'q':
+                case "a":
+                case "s":
+                case "m":
+                case "d":
+                case "q":
                     return c;
 
                 default:
@@ -60,7 +61,7 @@ namespace _08_methods_MathCalc
             }
         }
 
-        static double DoThatMath(char c)
+        static double DoThatMath(string c)
         {
             double a, b;
             Console.Write("Enter Number 1: ");
@@ -68,9 +69,9 @@ namespace _08_methods_MathCalc
             Console.Write("Enter Number 2: ");
             b = double.Parse(Console.ReadLine());
 
-            if (c == 'a') return Add(a, b);
-            if (c == 's') return Subtract(a, b);
-            if (c == 'm') return Multiply(a, b);
+            if (c == "a") return Add(a, b);
+            if (c == "s") return Subtract(a, b);
+            if (c == "m") return Multiply(a, b);
             else return Divide(a, b);
         }
 
@@ -80,8 +81,8 @@ namespace _08_methods_MathCalc
             while (running)
             {
                 DisplayMenu();
-                char c = GetChoice();
-                if (c == 'q')
+                string c = GetChoice();
+                if (c == "q")
                     running = false;
                 else
                 {
